@@ -1,0 +1,221 @@
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .main-content {
+    flex: 1;
+  }
+
+  .site-footer {
+    background: #222;
+    color: white;
+    padding: 50px 20px 20px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 240px;
+    margin: 0 15px 30px;
+    text-align: left;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .footer-section h3:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #5a62cd;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 8px;
+    transition: transform 0.2s;
+  }
+
+  .footer-section ul li:hover {
+    transform: translateX(5px);
+  }
+
+  .footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+    width: 100%;
+  }
+
+  .footer-section ul li a:hover {
+    color: #5a62cd;
+  }
+
+  .footer-section p {
+    color: #ccc;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .footer-section p i {
+    margin-right: 10px;
+    color: #5a62cd;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .social-icons a {
+    color: white;
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+
+  .social-icons a:hover {
+    background: #5a62cd;
+    transform: translateY(-3px);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 14px;
+  }
+
+  .footer-bottom p {
+    margin: 10px 0;
+    color: #aaa;
+  }
+
+  .footer-bottom a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-bottom a:hover {
+    color: #5a62cd;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-section {
+      margin: 0 0 30px;
+    }
+
+    .footer-section h3:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .footer-section ul li {
+      text-align: center;
+      transform: none !important;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+  }
+</style>
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Company Information -->
+    <div class="footer-section">
+      <h3>pk computers</h3>
+      <p>Your trusted partner for quality spare parts since 2010.</p>
+      <p>Offering worldwide shipping and 24/7 customer support.</p>
+    </div>
+
+    <!-- Legal Links -->
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="<%=request.getContextPath()%>/terms">Terms & Conditions</a></li>
+        <li><a href="<%=request.getContextPath()%>/privacy">Privacy Policy</a></li>
+        <li><a href="<%=request.getContextPath()%>/about">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3>Contact </h3>
+      <p><i class="fas fa-envelope"></i> support@pkspareparts.com</p>
+      <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley</p>
+    </div>
+
+    <!-- Follow Us (now inline like other sections) -->
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://facebook.com/sparepartssystem" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/sparepartssys" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/sparepartssystem" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/company/sparepartssystem" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/sparepartssystem" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 pk computers | All Rights Reserved</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>

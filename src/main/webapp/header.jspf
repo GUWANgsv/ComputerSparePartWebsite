@@ -1,0 +1,315 @@
+<!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+     
+        /* Header Styles */
+        header {
+            z-index: 1000;
+          position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background:white;
+            color:black;
+            padding: 15px 50px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 60px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .logo h2 {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 24px;
+            font-weight: bold;
+            color: #5a62cd;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color:black;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #5a62cd;
+        }
+
+        /* Search Box */
+        .search-box {
+            padding: 5px 8px;
+            border: none;
+            border-radius: 5px;
+            outline: 2px solid #5a62cd;
+                width: 180px;
+                font-size: 12px;
+            
+        }
+
+        /* Icons */
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-icons i:hover {
+            
+            color: #5a62cd;
+        }
+        .cart-icon img:hover {
+            
+                     
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+       
+        /* User Icon */
+        .user-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .user-icon img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+        
+            display: none;
+            position: absolute;
+            top: 35px;
+            right: 0;
+            background-color:white;
+            color:black;
+            padding: 10px;
+            border-radius: 5px;
+            width: 150px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .dropdown-menu a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #5a62cd;
+            color: white;
+        }
+
+        /* Show Dropdown */
+        .user-icon:hover .dropdown-menu {
+            display: block;
+        }
+        
+ 
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .header-icons {
+                margin-top: 10px;
+            }
+        }
+
+        li {
+    position: relative;
+    display: inline-block;
+    /* Add your base styling for list items here */
+}
+
+li a {
+   
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    /* Add your link styling here */
+}
+
+.dropdown-p {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-p a {
+    color: black;
+    text-decoration: none;
+     padding: 8px 0;
+    display: block;
+}
+
+.dropdown-p a:hover {
+    background-color: #5a62cd;
+    color: white;
+}
+
+/* Show the dropdown menu on hover */
+li:hover .dropdown-p {
+    display: block;
+}
+.site-header {
+    margin-bottom: 40px; /* Creates space after header */
+}
+.search-btn {
+    display: inline-flex ;
+	justify-content: center;
+	align-items: center;
+    padding: 6px 10px;
+    font-size: 14px;
+    width:auto;
+    height:30px;
+    margin-left: 8px;
+    background-color: white;
+    color: #5a62cd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+      align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background-color: #fff;
+    color: #3f4cb2;
+    transform: scale(1.2);
+}
+.search-form {
+    display: flex;
+    align-items: center;
+}
+    </style>
+
+ <header class="site-header">
+        <div class="logo">
+            <img src="images/new1.jpg" alt="SpareParts Logo">
+            <h2 > Computers</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.jsp">Home</a></li>
+<% 
+    String role = (String) session.getAttribute("role");
+    if (role == null) { 
+%>
+                <li><a href="Login.jsp">Login</a></li>
+<% 
+    } 
+%>
+                <li><a href="about.jsp">About</a></li>
+                <li><a href="contact.jsp">Contact</a></li>
+            
+                <li >
+                   
+                    <a >Products</a>
+                    <div class="dropdown-p" >
+                        <a href="SearchProductS?category=Processor">Processor</a>
+   						<a href="SearchProductS?category=Motherboard">Motherboard</a>
+    					<a href="SearchProductS?category=RAM">RAM</a>
+    					<a href="SearchProductS?category=SSD">SSD</a>
+    					<a href="SearchProductS?category=HDD">HDD</a>
+    					<a href="SearchProductS?category=Graphics Card">Graphics Card</a>
+    					<a href="SearchProductS?category=Power Supply">Power Supply</a>
+    					<a href="SearchProductS?category=Case">Case</a>
+    					<a href="SearchProductS?category=Speakers">Speakers</a>
+    					<a href="SearchProductS?category=coolsystem">Cool system(air/liquid)</a>
+    					<a href="SearchProductS?category=Monitor">Monitor</a>
+    					<a href="SearchProductS?category=Keyboard">Keyboard</a>
+    					<a href="SearchProductS?category=Mouse">Mouse</a>
+                        
+                    </div>
+                   
+                </li>
+                
+            </ul>
+        </nav>
+
+        <!-- Search Icon in a separate div -->
+        <div class="header-icons">
+            <form action="SearchProductS" method="get" style="display: flex; align-items: center;">
+            <input type="text" name="search" placeholder="Search..." class="search-box">
+            <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+        </form>
+        </div>
+        
+        <!-- Cart Icon -->
+        <div class="logo">
+            <div class="cart-icon">
+           
+            <a href="CartS">
+                <img src="images/new2.jpg" alt="CartS">  
+            </a>
+            </div>
+        </div>
+<% 
+   
+    if (role != null) { 
+%>
+        <!-- User Icon and Dropdown in a separate div -->
+        <div class="header-icons">
+            <div class="user-icon">
+                <img src="images/user.png" alt="User">
+                <div class="dropdown-menu">
+                    <a href="customerProfileServlet">Profile</a>
+                    <a href="LogoutS">Logout</a>
+                </div>
+            </div>
+        </div>
+<% 
+    } 
+%>
+    </header>

@@ -1,0 +1,174 @@
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+    /* Scoped styles for header only - removed global reset */
+
+    /* Header Styles - Scope all selectors to prevent conflicts */
+    .site-header {
+        z-index: 1000;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        color: black;
+        padding: 15px 50px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px; /* Creates space after header */
+        font-family: Arial, sans-serif;
+    }
+    
+    .site-header .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .site-header .logo img {
+        width: 60px;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+    
+    .site-header .logo img:hover {
+        transform: scale(1.05);
+    }
+    
+    .site-header .logo h2 {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 24px;
+        font-weight: bold;
+        color: #5a62cd;
+        margin: 0;
+    }
+
+    /* User Icon - Scoped selectors with improved hover functionality */
+    .site-header .user-icon {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .site-header .user-icon img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #f0f0f0;
+        transition: all 0.3s ease;
+    }
+    
+    .site-header .user-icon img:hover {
+        border-color: #5a62cd;
+    }
+    
+    /* Create an invisible hover area to prevent dropdown from closing */
+    .site-header .user-icon::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 20px; /* Creates invisible bridge to dropdown */
+    }
+
+    /* Dropdown Menu - Scoped selectors */
+    .site-header .dropdown-menu {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: white;
+        color: black;
+        padding: 10px;
+        border-radius: 8px;
+        width: 150px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: visibility 0s, opacity 0.3s;
+        pointer-events: none;
+    }
+
+    .site-header .dropdown-menu a {
+        color: #333;
+        text-decoration: none;
+        padding: 8px 12px;
+        display: block;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+    .site-header .dropdown-menu a:hover {
+        background-color: #5a62cd;
+        color: white;
+    }
+
+    /* Show Dropdown - Improved hover interaction */
+    .site-header .user-icon:hover .dropdown-menu,
+    .site-header .dropdown-menu:hover {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: 0s;
+    }
+
+    /* Header Icons container - Scoped selectors */
+    .site-header .header-icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Responsive Design - Scoped selectors */
+    @media (max-width: 768px) {
+        .site-header {
+            padding: 15px 20px;
+        }
+        
+        .site-header .logo h2 {
+            font-size: 20px;
+        }
+        
+        .site-header .user-icon img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .site-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .site-header .header-icons {
+            margin-top: 10px;
+        }
+        
+        .site-header .dropdown-menu {
+            right: -50px;
+        }
+    }
+</style>
+
+<header class="site-header">
+    <div class="logo">
+        <img src="images/new1.jpg" alt="SpareParts Logo">
+        <h2>Computers</h2>
+    </div>
+
+<% 
+    String role = (String) session.getAttribute("role");
+    if (role != null) { 
+%>
+    <div class="header-icons">
+        <div class="user-icon">
+            <img src="images/user.png" alt="User">
+            <div class="dropdown-menu">
+                <a href="LogoutS">Logout</a>
+            </div>
+        </div>
+    </div>
+<% 
+    } 
+%>
+</header>

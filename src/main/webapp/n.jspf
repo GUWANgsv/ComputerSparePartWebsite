@@ -1,0 +1,171 @@
+
+  <style>
+    /* Reset styles to prevent conflicts */
+    .pk-footer *, .pk-footer *:before, .pk-footer *:after {
+      box-sizing: border-box;
+    }
+    
+    /* Footer container that won't interfere with page content */
+    .pk-footer {
+      background: #222;
+      color: white;
+      padding: 50px 20px 20px;
+      font-family: 'Open Sans', Arial, sans-serif;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .pk-footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+    }
+
+    .pk-footer-section {
+      flex: 1;
+      min-width: 240px;
+      margin: 0 15px 30px;
+      text-align: left;
+    }
+
+    .pk-footer-section h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .pk-footer-section h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background: #5a62cd;
+    }
+
+    .pk-footer-section p {
+      color: #ccc;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .pk-footer-section p i {
+      margin-right: 10px;
+      color: #5a62cd;
+    }
+
+    .pk-social-icons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .pk-social-icons a {
+      color: white;
+      font-size: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .pk-social-icons a:hover {
+      background: #5a62cd;
+      transform: translateY(-3px);
+    }
+
+    .pk-footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      font-size: 14px;
+    }
+
+    .pk-footer-bottom p {
+      margin: 10px 0;
+      color: #aaa;
+    }
+
+    .pk-footer-bottom a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .pk-footer-bottom a:hover {
+      color: #5a62cd;
+    }
+
+    @media (max-width: 768px) {
+      .pk-footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .pk-footer-section {
+        margin: 0 0 30px;
+      }
+
+      .pk-footer-section h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .pk-social-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+
+ 
+  
+  <!-- Footer starts here -->
+  <footer class="pk-footer">
+    <div class="pk-footer-container">
+      <!-- Company Information -->
+      <div class="pk-footer-section">
+        <h3>pk computers</h3>
+        <p>Your trusted partner for quality spare parts since 2010.</p>
+        <p>Offering worldwide shipping and 24/7 customer support.</p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="pk-footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-envelope"></i> support@pkspareparts.com</p>
+        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley</p>
+      </div>
+
+      <!-- Follow Us section -->
+      <div class="pk-footer-section">
+        <h3>Follow Us</h3>
+        <div class="pk-social-icons">
+          <a href="https://facebook.com/sparepartssystem" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/sparepartssys" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/sparepartssystem" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/company/sparepartssystem" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/sparepartssystem" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="pk-footer-bottom">
+      <p>&copy; 2025 pk computers | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Font Awesome script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
